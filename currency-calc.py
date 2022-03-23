@@ -15,7 +15,7 @@ str_amount = input("Enter money amount (USD/EUR): ")
 amount   = int( str_amount[:-3] )
 currency = str_amount[-3:] 
 
-amount_mdl = amount * k_usd_2_mdl
+amount_mdl = amount * ( k_eur_2_mdl * (currency == 'EUR') + k_usd_2_mdl * (currency == 'USD') )
 
 print(amount, currency, " => ", amount_mdl, "MDL")
   
